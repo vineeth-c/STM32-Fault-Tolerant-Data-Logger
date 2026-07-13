@@ -68,5 +68,5 @@ Host-testable infrastructure is implemented and tested. Register-level hardware 
 Add this exact line to the original repository README when it is available:
 
 ```markdown
-Continued development: [Production-Grade STM32 Fault-Tolerant Data Logger](NEW_PROJECT_GITHUB_URL)
+Continued development: [STM32 Fault-Tolerant Data Logger](https://github.com/vineeth-c/STM32-Fault-Tolerant-Data-Logger)
 ```
