@@ -1,0 +1,24 @@
+#ifndef PROJECT_CONFIG_H
+#define PROJECT_CONFIG_H
+#include <stdint.h>
+#define PROJECT_VERSION_MAJOR 0u
+#define PROJECT_VERSION_MINOR 1u
+#define PROJECT_VERSION_PATCH 0u
+#define TARGET_HW_ID 0xF103C8u
+#define CPU_HZ 72000000u
+#define SCHEDULER_QUEUE_LENGTH 32u
+#define UART_RX_CAPACITY 128u
+#define UART_TX_CAPACITY 256u
+#define I2C_QUEUE_LENGTH 8u
+#define SPI_QUEUE_LENGTH 8u
+#define PROTOCOL_MAX_PAYLOAD 256u
+#define SAMPLE_INTERVAL_MS 1000u
+#define SENSOR_TIMEOUT_MS 100u
+#define STORAGE_BYTES 32768u
+#define WATCHDOG_TIMEOUT_MS 2000u
+#define FEATURE_BOOTLOADER 1
+#define FEATURE_DMA_SPI 0
+#define FEATURE_TEXT_LOG 1
+_Static_assert((UART_RX_CAPACITY & (UART_RX_CAPACITY-1u))==0u,"UART RX capacity must be power of two");
+_Static_assert(PROTOCOL_MAX_PAYLOAD <= 512u,"protocol payload too large");
+#endif

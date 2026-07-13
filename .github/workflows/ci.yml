@@ -1,0 +1,24 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  host-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y gcc make cppcheck clang-format
+      - run: make test
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install -e 'tools/device_cli[dev]'
+      - run: make python-test
+      - run: make lint
+  firmware:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y gcc-arm-none-eabi make
+      - run: make firmware bootloader size package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: firmware-artifacts
+          path: build/**

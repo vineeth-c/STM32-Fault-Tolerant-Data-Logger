@@ -1,0 +1,10 @@
+[build-system]
+requires=["setuptools>=68"]
+build-backend="setuptools.build_meta"
+[project]
+name="stm32-data-logger-cli"
+version="0.1.0"
+requires-python=">=3.11"
+dependencies=["pyserial>=3.5"]
+[project.optional-dependencies]
+dev=["pytest>=8","ruff>=0.5","mypy>=1.10"]
