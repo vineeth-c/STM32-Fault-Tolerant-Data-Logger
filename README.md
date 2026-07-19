@@ -64,9 +64,6 @@ st-flash write build/application.bin 0x08004000
 Host-testable infrastructure is implemented and tested. Register-level hardware engines, complete fault-frame capture, production EEPROM media integration, and full firmware installation flows require board-specific completion and physical HIL validation. No hardware-validation claim is made.
 
 ## First repository cross-link
-
-Add this exact line to the original repository README when it is available:
-
 ```markdown
 Continued development: [STM32 Fault-Tolerant Data Logger](https://github.com/vineeth-c/STM32-Fault-Tolerant-Data-Logger)
 ```
